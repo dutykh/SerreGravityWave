@@ -9,9 +9,8 @@ The numerical scheme is described in the following publication:
 
 * **D. Dutykh**, D. Clamond, P. Milewski & D. Mitsotakis. [*Finite volume and pseudo-spectral schemes for the fully nonlinear 1D Serre equations*](http://hal.archives-ouvertes.fr/hal-00587994/), European Journal of Applied Mathematics, **24**(5), 761-787, 2013
 
-##### Remark
-
-In this script we implemented a good time discretization scheme (Dormand-Prince 5(4)), but with a constant time step (for simplicity). However, the authors strongly recommend to use the adaptive time stepping procedures such as the PI-control strategy.
+**Remark**  
+: In this script we implemented a good time discretization scheme (Dormand-Prince 5(4)), but with a constant time step (for simplicity). However, the authors strongly recommend to use the adaptive time stepping procedures such as the PI-control strategy.
 
 Any comments are welcome!
 
