@@ -117,7 +117,7 @@ function SerreGravityWave ()
           Plot(eta, u, t);
         end % if (draw)
         
-    end % while (t < T)
+    end % for jj
 
     %%% At the end of the simulation we show the space-time plot:
     figure;
@@ -131,12 +131,13 @@ function SerreGravityWave ()
 
     %%% At the end of the simulation we show the energy conservation:
     figure;
-    plot (Times, Energy - mean(Energy), 'bo-', 'LineWidth', 1.0), grid off
+    plot(Times, Energy - mean(Energy), 'bo-', 'LineWidth', 1.0), grid off
     xlabel('$t$', 'interpreter', 'latex', 'fontsize', 14);
     ylabel('$\mathcal{E}(t) - \langle\mathcal{E}\rangle$', 'interpreter', 'latex', 'fontsize', 14);
-    title ('Energy conservation');
+    title('Energy conservation');
     set(gcf, 'color', 'w');
 
+    %%% END OF THE MAIN SCRIPT %%%
     %%% ---------------------------------------------------- %%%
 
     %%% We set-up an initial condition consisting of two 
