@@ -6,6 +6,12 @@
 %%% As an example, we simulate thr head-on collision   %%%
 %%%         of two different solitary waves            %%%
 %%% -------------------------------------------------- %%%
+%%% Reference: D. Dutykh, D. Clamond, P. Milewski &    %%%
+%%% D. Mitsotakis. Finite volume and pseudo-spectral   %%%
+%%% schemes for the fully nonlinear 1D Serre equations %%%
+%%% European Journal of Applied Mathematics, 24(5),    %%%
+%%%                                   761-787, 2013    %%%
+%%% -------------------------------------------------- %%%
 %%% Author: Denys Dutykh, CNRS -- LAMA, Univ of Savoie %%%
 %%% E-mail: Denys.Dutykh@univ-savoie.fr                %%%
 %%% Web:    http://www.denys-dutykh.com/               %%%
