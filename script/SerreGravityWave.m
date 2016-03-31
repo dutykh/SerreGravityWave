@@ -175,7 +175,7 @@ function SerreGravityWave ()
         plot (x, ampl*ones(size(x)), 'k--'), hold on
         plot (x, (a1 + a2)*ones(size(x)), 'r--'), hold off
         axis([-l l -0.2*ampl 2.2*ampl])
-        legend('Free surface', 'Heighest wave ampl.', 'Sum of two ampl.',...
+        legend('Free surface', 'Highest wave ampl.', 'Sum of two ampl.',...
             'location', 'NorthEast');
         xlabel('$x$', 'interpreter', 'latex', 'fontsize', 14);
         ylabel('$\eta(x,t)$', 'interpreter', 'latex', 'fontsize', 14);
