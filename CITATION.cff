@@ -1,0 +1,64 @@
+# Dr. Denys Dutykh (Mathematics Department, Khalifa University of Science and Technology, Abu Dhabi, UAE)
+cff-version: 1.2.0
+message: "If you use this code, please cite the article given under preferred-citation."
+title: "SerreGravityWave: a Fourier pseudo-spectral solver for the Serre–Green–Naghdi equations of long gravity waves"
+type: software
+authors:
+  - family-names: Dutykh
+    given-names: Denys
+    affiliation: "Khalifa University of Science and Technology"
+    orcid: "https://orcid.org/0000-0001-5247-2788"
+  - family-names: Clamond
+    given-names: Didier
+    affiliation: "Université Côte d'Azur"
+    orcid: "https://orcid.org/0000-0003-0543-8995"
+  - family-names: Mitsotakis
+    given-names: Dimitrios
+    affiliation: "Victoria University of Wellington"
+    orcid: "https://orcid.org/0000-0003-2700-6093"
+repository-code: "https://github.com/dutykh/SerreGravityWave"
+license: MIT
+version: 1.0.0
+date-released: "2026-11-14"
+keywords:
+  - water-waves
+  - serre-green-naghdi
+  - boussinesq
+  - dispersive-waves
+  - solitary-waves
+  - nonlinear-waves
+  - pseudo-spectral
+  - spectral-methods
+  - numerical-methods
+  - fluid-dynamics
+  - matlab
+  - octave
+abstract: >-
+  MATLAB function, which also runs in GNU Octave, solving the Serre–Green–Naghdi equations of fully nonlinear, weakly
+  dispersive long gravity waves over a flat bottom on a periodic interval, with the head-on collision of two solitary
+  waves as an example. The fields are expanded in Fourier series; the linear waves are propagated exactly and the
+  nonlinear terms are advanced by a six-stage Runge–Kutta scheme of Dormand and Prince, the velocity being recovered
+  from the conserved variable by a fixed-point iteration.
+preferred-citation:
+  type: article
+  title: Finite Volume and Pseudo-Spectral Schemes for the Fully Nonlinear 1D Serre Equations
+  authors:
+  - family-names: Dutykh
+    given-names: Denys
+  - family-names: Clamond
+    given-names: Didier
+  - family-names: Milewski
+    given-names: Paul
+  - family-names: Mitsotakis
+    given-names: Dimitrios
+  journal: European Journal of Applied Mathematics
+  volume: 24
+  issue: '05'
+  start: 761
+  end: 787
+  year: 2013
+  doi: 10.1017/S0956792513000168
+  identifiers:
+  - type: url
+    value: https://arxiv.org/abs/1104.4456
+    description: arXiv preprint
