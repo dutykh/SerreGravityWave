@@ -16,9 +16,9 @@ SerreGravityWave is a MATLAB function, which also runs unchanged in GNU Octave, 
 equations, the fully nonlinear and weakly dispersive model of long gravity waves in shallow water, over a flat bottom
 on a periodic interval, and simulates as an example the head-on collision of two solitary waves. The fields are
 expanded in Fourier series; the linear waves are propagated exactly in Fourier space, and the nonlinear terms are
-advanced by a six-stage Runge–Kutta scheme of Dormand and Prince with a constant time step. The scheme is described
-in the article of Denys Dutykh, Didier Clamond, Paul Milewski and Dimitrios Mitsotakis in the European Journal of
-Applied Mathematics (2013), cited below.
+advanced by the fourth-order formula of the six-stage Runge–Kutta pair RK5(4)6M of Dormand and Prince, with a constant
+time step. The scheme is described in the article of Denys Dutykh, Didier Clamond, Paul Milewski and Dimitrios
+Mitsotakis in the European Journal of Applied Mathematics (2013), cited below.
 
 ## The problem
 
@@ -51,9 +51,13 @@ tol = 1e-14, theta = 0.5         tolerance and relaxation of the iteration that 
 The unknowns η and q are advanced in Fourier space, where the linear part of the equations is integrated exactly
 (an integrating factor) and the nonlinear part by the Runge–Kutta scheme; at each stage the velocity u is recovered
 from q by a relaxed fixed-point iteration, and the products are computed on the grid. Against aliasing, every
-wavenumber larger than N/4 in absolute value is removed from the fields and from the operators. The time step is
-constant for simplicity; for other computations the authors recommend an adaptive time step, such as the PI control
-of the step size.
+wavenumber larger than N/4 in absolute value is removed from the fields and from the operators: the upper half of the
+spectrum, more than the 2/3 rule would remove (the wavenumbers larger than N/3). The time step is constant for
+simplicity: of the pair RK5(4)6M the function uses the fourth-order weights alone, without the fifth-order ones that
+would estimate the local error; for other computations the authors recommend an adaptive time step, such as the PI
+control of the step size. Version 1.0.1 corrects two comments of the source that said otherwise, one calling the
+removal of the upper half of the spectrum the 2/3 rule, the other calling the step adaptive; the computation itself is
+unchanged.
 
 ## Quick start
 

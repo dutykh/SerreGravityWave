@@ -40,7 +40,8 @@ function SerreGravityWave ()
     kmax = max(k);
     Nvec = 1:N/2+1;
     
-    % antialising treatment (2/3 rule)
+    % dealiasing: the wavenumbers k = n*pi/l with |n| > N/4, the upper half of the spectrum,
+    % are set to zero (more than the 2/3 rule, which would remove only those with |n| > N/3)
     j = (N/4+2:N/4*3);              % the frequencies we make zero
     k(j) = 0;
     
@@ -268,7 +269,7 @@ function SerreGravityWave ()
         etave = sum(eta)/N;                 % average value of \eta
         eprim = eta - etave;                % \eta' = \eta - \eta_ave
         etax = real(ifft(1i*k.*eta_hat));   % \eta_x in real space
-        etaxx = real(ifft(-K2.*eta_hat));   % \eta_x in real space
+        etaxx = real(ifft(-K2.*eta_hat));   % \eta_xx in real space
         h = d + eta;                        % the total water depth
         
         err = inf;
@@ -303,15 +304,19 @@ function SerreGravityWave ()
     
     %%% ---------------------------------------------------- %%%
     
-    %%% This function makes one adaptive time step:
+    %%% This function makes one time step of the constant size dt:
     % Input parameters:
     %   v: solution in Fourier space at the previous time step
-    %   u: depth-averaged velocity at the previous time step
+    %   u: Fourier transform of the depth-averaged velocity at the previous time step
     %  dt: the time step value
     % Output parameters:
-    %   w: solution in Fourier space at the following time step
-    %   u: depth-averaged velocity at the next time step
-    %%% Time-stepping: This Runge-Kutta-Prince-Dormand method 4-5
+    %   v: solution in Fourier space at the following time step
+    %   u: Fourier transform of the velocity recovered at the last stage (time t + dt),
+    %      the initial guess of the next step
+    %%% Time-stepping: the six-stage Runge-Kutta pair RK5(4)6M of Dormand and Prince (1980),
+    %%% of which the step uses the fourth-order weights (31/540, 0, 190/297, -145/108,
+    %%% 351/220, 1/20); the fifth-order weights, which with them would estimate the local
+    %%% error for an adaptive step, are not used.
     function [v, u] = SerreOneStep(v, u, dt)
         [k1, u] = RHS(v, u, 0);
         [k2, u] = RHS(v + dt*k1/5, u, dt/5);

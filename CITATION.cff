@@ -18,8 +18,8 @@ authors:
     orcid: "https://orcid.org/0000-0003-2700-6093"
 repository-code: "https://github.com/dutykh/SerreGravityWave"
 license: MIT
-version: 1.0.0
-date-released: "2026-11-14"
+version: 1.0.1
+date-released: "2026-11-15"
 keywords:
   - water-waves
   - serre-green-naghdi
@@ -37,8 +37,8 @@ abstract: >-
   MATLAB function, which also runs in GNU Octave, solving the Serre–Green–Naghdi equations of fully nonlinear, weakly
   dispersive long gravity waves over a flat bottom on a periodic interval, with the head-on collision of two solitary
   waves as an example. The fields are expanded in Fourier series; the linear waves are propagated exactly and the
-  nonlinear terms are advanced by a six-stage Runge–Kutta scheme of Dormand and Prince, the velocity being recovered
-  from the conserved variable by a fixed-point iteration.
+  nonlinear terms are advanced, with a constant step, by the fourth-order formula of a six-stage Runge–Kutta pair of
+  Dormand and Prince, the velocity being recovered from the conserved variable by a fixed-point iteration.
 preferred-citation:
   type: article
   title: Finite Volume and Pseudo-Spectral Schemes for the Fully Nonlinear 1D Serre Equations
